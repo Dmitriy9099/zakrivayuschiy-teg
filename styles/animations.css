@@ -1,0 +1,111 @@
+/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+*/
+
+@keyframes strelka {
+  0% {
+    right: 100%;
+  }
+
+  100% {
+    right: 96%;
+  }
+}
+
+/*heart*/
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  fill: var(--accent-color);
+  opacity: 0;
+  transition: 0.3s ease 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+.main-body {
+  fill: var(--accent-color);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  opacity: 1;
+  transition: 0.3s ease 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--filling);
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+.like-icon:active .main-body {
+  fill: var(--filling);
+  opacity: 1;
+  transition: 0.3s ease 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--filling);
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--filling);
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--filling);
+  opacity: 1;
+  transition: 0.1s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s 1 backwards;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s 1 backwards;
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5) translateX(-6px) translateY(-6px);
+  }
+}
+
+@keyframes sparks {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
