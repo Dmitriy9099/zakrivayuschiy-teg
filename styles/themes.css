@@ -28,7 +28,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root.theme-dark {
+  :root .theme-auto {
     --main-font: "Inter";
     --accent-font: "Press Start 2P";
     --weight-main-font: 465;
