@@ -26,24 +26,25 @@
 /*heart*/
 .sparks {
   opacity: 0;
+  transition: linear;
 }
 
 .core {
   fill: var(--accent-color);
   opacity: 0;
-  transition: 0.3s ease 0.03s;
+  transition: 0.3s linear 0.03s;
 }
 
 .like-icon:hover .core {
   fill: var(--accent-color);
   opacity: 1;
-  transition: 0.3s ease;
+  transition: 0.3s linear;
 }
 
 .main-body {
   fill: var(--accent-color);
   opacity: 0;
-  transition: 0.3s ease;
+  transition: 0.3s linear;
 }
 
 .like-icon:hover .main-body {
@@ -79,15 +80,15 @@
 .like-icon.is-liked .contour {
   fill: var(--filling);
   opacity: 1;
-  transition: 0.1s linear;
+  transition: 0.1s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {
-  animation: heart 0.3s ease-in 0.1s 1 backwards;
+  animation: heart 0.3s ease-in 0.1s 1 alternate;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s 1 backwards;
+  animation: sparks 0.3s ease-in 0.3s 1 alternate;
 }
 
 @keyframes heart {
